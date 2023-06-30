@@ -1,17 +1,17 @@
 package BackEnd_unit01_week01_day05_weekProject_package;
 
 //- - - - - - - - - - - - - - - - - - - - class definition
-public class Video extends AudioVideo {
+public class Immagine extends ElementoMultimediale {
 
 	private int luminosita;
 
-	public Video(String _titolo, int _durata, int _volume, int _luminosita) {
-		super(_titolo, _durata, _volume);
+	public Immagine(String _titolo, int _luminosita) {
+		super(_titolo);
 		this.luminosita = _luminosita;
 	}
 
 	public boolean riproducibile() {
-		return true;
+		return false;
 	}
 
 	public void abbassaLuminosita() {
@@ -24,10 +24,8 @@ public class Video extends AudioVideo {
 		luminosita++;
 	}
 
-	public void play() {
-		for (int i = 0; i < durata; i++) {
-			System.out.println((titolo + " " + "!".repeat(volume) + " " + "*".repeat(luminosita)).repeat(i + 1));
-		}
+	public void show() {
+		System.out.println(titolo + " " + "*".repeat(luminosita));
 	}
 
 }

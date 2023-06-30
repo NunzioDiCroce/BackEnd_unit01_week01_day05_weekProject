@@ -12,7 +12,9 @@ public class RegistrazioneAudio extends AudioVideo {
 	}
 
 	public void play() {
-
+		for (int i = 0; i < durata; i++) {
+			System.out.println((titolo + " " + "!".repeat(volume)).repeat(i + 1));
+		}
 	}
 
 }
