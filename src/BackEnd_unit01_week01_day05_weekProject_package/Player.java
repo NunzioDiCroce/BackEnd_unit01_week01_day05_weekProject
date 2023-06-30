@@ -68,7 +68,6 @@ public class Player {
 				System.out.println("");
 				System.out.println("Hai inserito un valore non valido!");
 				i--;
-				System.out.println("Inserisci 1 per video, 2 per audio, 3 per immagine:");
 			}
 		}
 
@@ -79,18 +78,65 @@ public class Player {
 		System.out.println("Player");
 		System.out.println("- - - - - - - - - - - - - - - - - - - -");
 		System.out.println("Hai creato 5 elementi multimediali.");
-		System.out.println("Scegli da 1 a 5 per usare il Player.");
-		System.out.println("Inserisci un valore da 1 a 5:");
-		String selezione = playerScanner.nextLine();
-		int selezioneInt = Integer.parseInt(selezione);
-		int selezioneIntNew = selezioneInt - 1;
 
-		if (selezioneIntNew == 0 || selezioneIntNew == 1 || selezioneIntNew == 2 || selezioneIntNew == 3
-				|| selezioneIntNew == 4) {
+		int sceltaInt = -1;
 
-		} else {
+		while (sceltaInt != 0) {
+
 			System.out.println("");
-			System.out.println("Hai effettuato una scelta non valida!");
+			System.out.println("Scegli un valore da 1 a 5 per utilizzare il Player oppure 0 per terminare.");
+			String scelta = playerScanner.nextLine();
+			sceltaInt = Integer.parseInt(scelta);
+
+			switch (sceltaInt) {
+			case 1:
+				ElementoMultimediale playerArrayItem1 = playerArray[sceltaInt - 1];
+				if (playerArrayItem1.riproducibile()) {
+					((AudioVideo) playerArrayItem1).play();
+				} else {
+					((Immagine) playerArrayItem1).show();
+				}
+				break;
+			case 2:
+				ElementoMultimediale playerArrayItem2 = playerArray[sceltaInt - 1];
+				if (playerArrayItem2.riproducibile()) {
+					((AudioVideo) playerArrayItem2).play();
+				} else {
+					((Immagine) playerArrayItem2).show();
+				}
+				break;
+			case 3:
+				ElementoMultimediale playerArrayItem3 = playerArray[sceltaInt - 1];
+				if (playerArrayItem3.riproducibile()) {
+					((AudioVideo) playerArrayItem3).play();
+				} else {
+					((Immagine) playerArrayItem3).show();
+				}
+				break;
+			case 4:
+				ElementoMultimediale playerArrayItem4 = playerArray[sceltaInt - 1];
+				if (playerArrayItem4.riproducibile()) {
+					((AudioVideo) playerArrayItem4).play();
+				} else {
+					((Immagine) playerArrayItem4).show();
+				}
+				break;
+			case 5:
+				ElementoMultimediale playerArrayItem5 = playerArray[sceltaInt - 1];
+				if (playerArrayItem5.riproducibile()) {
+					((AudioVideo) playerArrayItem5).play();
+				} else {
+					((Immagine) playerArrayItem5).show();
+				}
+				break;
+			}
+
 		}
+
+		System.out.println("");
+		System.out.println("- - - - - - - - - - - - - - - - - - - -");
+		System.out.println("Termine programma");
+		System.out.println("- - - - - - - - - - - - - - - - - - - -");
+
 	}
 }
