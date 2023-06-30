@@ -129,6 +129,10 @@ public class Player {
 					((Immagine) playerArrayItem5).show();
 				}
 				break;
+			default:
+				System.out.println("Scegli un valore da 1 a 5 per utilizzare il Player oppure 0 per terminare.");
+				scelta = playerScanner.nextLine();
+				sceltaInt = Integer.parseInt(scelta);
 			}
 
 		}
